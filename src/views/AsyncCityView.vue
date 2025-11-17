@@ -130,7 +130,7 @@ const apiKey = import.meta.env.VITE_OPENWEATHER_API_KEY;
 const getWeatherData = async () => {
   try {
     const weatherData = await axios.get(
-      `https://api.openweathermap.org/data/2.5/onecall?lat=${route.query.lat}&lon=${route.query.lng}&exclude=minutely&appid=${apiKey}&units=metric&lang=es`
+      `https://api.openweathermap.org/data/3.0/onecall?lat=${route.query.lat}&lon=${route.query.lng}&exclude=minutely&appid=${apiKey}&units=metric&lang=es`
     );
 
     const localOffset = new Date().getTimezoneOffset() * 60000;
