@@ -3,10 +3,10 @@
         <CityCard :city="city" @click="goToCityView(city)" />
     </div>
 
-    <p v-if="savedCities.length === 0">
-        No se han añadido ubicaciones. Para empezar a rastrear una ubicación, realice una búsqueda en el campo de
-        arriba.
-    </p>
+    <div v-if="savedCities.length === 0" class="mt-4 rounded-2xl border border-dashed border-white/10 bg-slate-900/60 px-4 py-5 text-sm text-slate-300">
+        <p class="font-medium">Aún no has añadido ninguna ubicación.</p>
+        <p class="mt-1 text-xs text-slate-400">Empieza buscando una ciudad en el buscador superior y añádela con el icono "+".</p>
+    </div>
 </template>
 
 <script setup>
