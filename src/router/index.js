@@ -9,13 +9,24 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView,
+      meta: {
+        title: "Home",
+      }
     },
     {
       path: '/tiempo/:city',
       name: 'cityView',
       component: CityView,
+      meta: {
+        title: `El tiempo`,
+      }
     },
   ],
 })
+
+router.beforeEach((to, from, next) => {
+  document.title = `${to.params.city ? `${to.params.city}` : to.meta.title} | El Tiempo Local`;
+  next();
+});
 
 export default router
